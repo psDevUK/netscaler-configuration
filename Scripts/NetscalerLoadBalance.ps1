@@ -4,14 +4,14 @@
     .Description
     This script was written to automate the process of disabling a server within Citrix Netscaler using the Nitro API wrapped in a PowerShell module. This script will also run a PERFMON trace of current user connections to all websites and display this to you so you can verify that the results have changed through each trace run on the PERFMON trace. This function only requires a COMPUTERNAME parameter to be passed to it, but as the examples show you can over-ride the default settings set on the other two parameters.
    .Example
-    "QAHTEST01" | Disable-NetscalerServer
-    This will disable the QAHTEST01 server with the default graceful exit of YES and a delay of 600 seconds, passing the COMPUTERNAME parameter via pipeline
+    "SERVERTEST01" | Disable-NetscalerServer
+    This will disable the SERVERTEST01 server with the default graceful exit of YES and a delay of 600 seconds, passing the COMPUTERNAME parameter via pipeline
     .Example
-    Disable-NetscalerServer -ComputerName QAHTEST01 -DelayInSeconds "100"
-    This will disable the QAHTEST01 server with the default graceful exit of YES and a delay of 100 seconds
+    Disable-NetscalerServer -ComputerName SERVERTEST01 -DelayInSeconds "100"
+    This will disable the SERVERTEST01 server with the default graceful exit of YES and a delay of 100 seconds
     .Example
-    Disable-NetscalerServer -ComputerName QAHTEST01 -Graceful "NO" -DelayInSeconds "0"
-    This will disable the QAHTEST01 server with the default graceful exit of NO and a delay of 0 seconds all connections terminated immediately
+    Disable-NetscalerServer -ComputerName SERVERTEST01 -Graceful "NO" -DelayInSeconds "0"
+    This will disable the SERVERTEST01 server with the default graceful exit of NO and a delay of 0 seconds all connections terminated immediately
    .Notes
     NAME: Disable-NetscalerServer
     AUTHOR: Adam Bacon
@@ -153,11 +153,11 @@ Function Disable-NetscalerServer {
     .Description
     This script was written to automate the process of enabling a server within Citrix Netscaler using the Nitro API wrapped in a PowerShell module. This script will also run a PERFMON trace of current user connections to all websites and display this to you so you can verify that the results have changed through each trace run on the PERFMON trace. There is only one parameter required to run this function, which is the COMPUTERNAME parameter as shown in the example below.
    .Example
-    Enable-NetscalerServer -ComputerName QAHTEST01
-    This will enable the QAHTEST01 server immediately
+    Enable-NetscalerServer -ComputerName SERVERTEST01
+    This will enable the SERVERTEST01 server immediately
    .Example
-    "QAHTEST01" | Enable-NetscalerServer
-    This will enable the QAHTEST01 server immediately passing the COMPUTERNAME parameter via the pipeline
+    "SERVERTEST01" | Enable-NetscalerServer
+    This will enable the SERVERTEST01 server immediately passing the COMPUTERNAME parameter via the pipeline
    .Notes
     NAME: Enable-NetscalerServer
     AUTHOR: Adam Bacon
